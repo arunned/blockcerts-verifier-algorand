@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+        <title>Proofplum Verification</title>
+
+
+        <script src="../dist/main.js"></script>
+
+
+    </head>
+    <body>
+        <div class="vertical-section-container centered" id='getlink'>
+
+
+
+        </div>
+
+        <script>
+
+        function getParameterByName(name, url) {
+                        if (!url) url = window.location.href;
+                        name = name.replace(/[\[\]]/g, "\\$&");
+                        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                            results = regex.exec(url);
+                        if (!results) return null;
+                        if (!results[2]) return '';
+                        return decodeURIComponent(results[2].replace(/\+/g, " "));
+                    }
+
+              document.getElementById("getlink").innerHTML = " <blockcerts-verifier display-mode='fullscreen' src=" + " https://verify.proofplum.com/" + getParameterByName('id') + ".json ></blockcerts-verifier>";
+      </script>
+
+    </body>
+</html>
